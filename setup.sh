@@ -31,9 +31,8 @@ title "Install the latest version ($HUGO_VERSION) of Hugo static site generator"
 curl -L $SANDBOX_CONF_HOME/bin/hugo https://github.com/${HUGO_REPO}/releases/download/${HUGO_VERSION}/hugo_${HUGO_VERSION:1}_Linux-64bit.tar.gz \
      | tar -xz -C $SANDBOX_CONF_HOME/bin hugo
 
-rm -f $HOME/.zshrc $HOME/.z
-ln -s $SANDBOX_CONF_HOME/zshrc $HOME/.zshrc
-ln -s $SANDBOX_CONF_HOME/zrc $HOME/.z
+[[ -f $HOME/.zshrc ]] || ln -s $SANDBOX_CONF_HOME/zshrc $HOME/.zshrc
+[[ -f $HOME/.z ]] || cp $SANDBOX_CONF_HOME/zrc .z
 
 [[ $SHELL == '/bin/zsh' ]] || sudo usermod --shell /bin/zsh $USER
 
