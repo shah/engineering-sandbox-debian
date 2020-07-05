@@ -10,7 +10,7 @@ Then:
     cp secrets.env.sample secrets.env
     vi secrets.env
 
-Edit the `.engrsb/secrets.env` file, update the secret information.
+Edit `.engrsb/secrets.env` with your secret information.
 
 Then:
 
