@@ -1,6 +1,5 @@
 # SANDBOX_CONF_HOME is the where we keep the common engineering configs
 export SANDBOX_CONF_HOME=${SANDBOX_CONF_HOME:-$HOME/.engrsb}
-export DENO_INSTALL=$SANDBOX_CONF_HOME
 
 # Load Antigen
 source /usr/share/zsh-antigen/antigen.zsh
@@ -13,3 +12,10 @@ antigen init $SANDBOX_CONF_HOME/antigenrc
 
 # All downloaded binaries were put in $SANDBOX_CONF_HOME so add it to the path
 export PATH=$SANDBOX_CONF_HOME/bin:$PATH
+
+# Deno aliases for frequently used commands
+export DENO_INSTALL=$SANDBOX_CONF_HOME
+export DENO_CACHES_HOME=$HOME/.cache/deno
+alias deno-run="deno run -A --unstable"
+alias deno-test="deno fmt ; deno test -A --unstable"
+alias deno-clear-caches="rm -rf $DENO_CACHES_HOME/deps; rm -rf $DENO_CACHES_HOME/gen"
