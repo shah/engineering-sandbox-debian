@@ -5,6 +5,8 @@ Create a Debian WSL2 instance using Windows Store.
 Then:
 
     cd $HOME
+    sudo apt-get update
+    sudo apt-get install -y git
     git clone https://github.com/shah/engineering-sandbox-debian.git .engrsb
     cd .engrsb
     cp secrets.env.sample secrets.env
@@ -26,3 +28,10 @@ Now the following will be setup:
 * TODO: Java with SDKMAN!
 * TODO: Rust
 * TODO: Python with pyenv
+
+Setup projects folder structure:
+
+    mkdir -p $HOME/workspaces/git.netspective.io
+    mkdir -p $HOME/workspaces/github.com
+
+If you use any other repos, create appropriate subdirectories above.
