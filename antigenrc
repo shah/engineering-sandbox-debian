@@ -12,6 +12,9 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle rupa/z
 
+# Load Python Version Manager
+antigen bundle mattberther/zsh-pyenv
+
 # Load NodeJS version manager plugin
 export NVM_COMPLETION=true
 export NVM_LAZY_LOAD=true

@@ -21,6 +21,7 @@ sudo apt-get update
 
 title "Install common development utilities"
 sudo apt-get install -y wget curl git make jq bzip2 graphviz xmlstarlet zip unzip zsh zsh-antigen tree gawk iproute2
+sudo apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev curl libbz2-dev
 
 title "Install the latest version of Deno into $SANDBOX_CONF_HOME/bin"
 curl -fsSL https://deno.land/x/install/install.sh | DENO_INSTALL=$SANDBOX_CONF_HOME sh
