@@ -27,7 +27,7 @@ Now the following will be setup:
 * Hugo, Deno in .engrsb/bin (and in $PATH)
 * nvm (run `nvm install node` once)
 * SDKMAN! (run `sdk install java` once and then, e.g., `sdk use java 11.0.7.hs-adpt`)
-* TODO: Rust
+* Rust toolchain
 * TODO: Python with pyenv
 
 Setup projects folder structure:

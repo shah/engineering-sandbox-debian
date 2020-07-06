@@ -47,7 +47,10 @@ git config --global push.default simple
 git config --global credential.helper 'cache --timeout=2592000'
 
 title "Install SDKMAN! Java SDK Version Manager"
-# we sue rcupdate=false because SDKMAN! reference is already in zshrc
+# we use rcupdate=false because SDKMAN! reference is already in zshrc
 curl -s "https://get.sdkman.io?rcupdate=false" | bash > $SANDBOX_CONF_HOME/sdkman.log
+
+title "Install Rust toolchain"
+curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
 
 echo "Setup complete, logout and back in."

@@ -11,7 +11,11 @@ antigen init $SANDBOX_CONF_HOME/antigenrc
 [[ ! -f $SANDBOX_CONF_HOME/p10k.zsh ]] || source $SANDBOX_CONF_HOME/p10k.zsh
 
 # All downloaded binaries were put in $SANDBOX_CONF_HOME so add it to the path
-export PATH=$SANDBOX_CONF_HOME/bin:$PATH
+path+=($SANDBOX_CONF_HOME/bin)
+
+# Rust toolchain
+path+=($HOME/.cargo/bin)
+source $HOME/.cargo/env
 
 # Deno aliases for frequently used commands
 export DENO_INSTALL=$SANDBOX_CONF_HOME
