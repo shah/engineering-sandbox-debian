@@ -25,6 +25,7 @@ Now the following will be setup:
 * Antigen and oh-my-zsh script framework
 * Powerline 10k Theme with nice defaults
 * Hugo, Deno in .engrsb/bin (and in $PATH)
+* nvm (run `nvm install node` once)
 * TODO: Java with SDKMAN!
 * TODO: Rust
 * TODO: Python with pyenv
