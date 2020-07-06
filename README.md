@@ -26,7 +26,7 @@ Now the following will be setup:
 * Powerline 10k Theme with nice defaults
 * Hugo, Deno in .engrsb/bin (and in $PATH)
 * nvm (run `nvm install node` once)
-* TODO: Java with SDKMAN!
+* SDKMAN! (run `sdk install java` once and then, e.g., `sdk use java 11.0.7.hs-adpt`)
 * TODO: Rust
 * TODO: Python with pyenv
 

@@ -19,3 +19,7 @@ export DENO_CACHES_HOME=$HOME/.cache/deno
 alias deno-run="deno run -A --unstable"
 alias deno-test="deno fmt ; deno test -A --unstable"
 alias deno-clear-caches="rm -rf $DENO_CACHES_HOME/deps; rm -rf $DENO_CACHES_HOME/gen"
+
+# Use SDKMAN! for Java SDK version managment
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
