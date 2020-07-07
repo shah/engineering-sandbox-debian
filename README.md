@@ -23,6 +23,7 @@ Now the following will be setup:
 
 * zsh as the default shell
 * Antigen and oh-my-zsh script framework
+  * [git-auto-fetch](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-auto-fetch) is turned on, see instructions to turn it off for certain repos
 * Powerline 10k Theme with nice defaults
 * Hugo, Deno in .engrsb/bin (and in $PATH)
 * nvm (run `nvm install node` once)
