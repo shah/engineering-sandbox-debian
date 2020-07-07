@@ -31,7 +31,7 @@ Now the following will be setup:
 * Rust toolchain
 * Python with pyenv (run `pyenv install 3.8.3` once and then, e.g. `pyenv global 3.8.3`)
 
-sudo curl -o /usr/share/zsh-antigen/antigen.zsh -sL git.io/antigen
+# Project Directories
 
 Setup projects folder structure:
 
