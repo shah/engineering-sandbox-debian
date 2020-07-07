@@ -28,7 +28,7 @@ Now the following will be setup:
 * nvm (run `nvm install node` once)
 * SDKMAN! (run `sdk install java` once and then, e.g., `sdk use java 11.0.7.hs-adpt`)
 * Rust toolchain
-* Python with pyenv (run `pyenv install 3.8.3` once)
+* Python with pyenv (run `pyenv install 3.8.3` once and then, e.g. `pyenv global 3.8.3`)
 
 Setup projects folder structure:
 
