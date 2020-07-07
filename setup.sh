@@ -43,6 +43,7 @@ curl -L https://github.com/${HUGO_REPO}/releases/download/${HUGO_VERSION}/hugo_$
 git config --global user.email "$SANDBOX_GIT_USER_EMAIL"
 git config --global user.name "$SANDBOX_GIT_USER_NAME"
 git config --global push.default simple
+git config --global pull.rebase false 
 
 # Add a 30-day timeout for credentials caching
 git config --global credential.helper 'cache --timeout=2592000'
