@@ -17,6 +17,9 @@ path+=($SANDBOX_CONF_HOME/bin)
 path+=($HOME/.cargo/bin)
 source $HOME/.cargo/env
 
+# Engineering Sandbox frequently used commands
+alias engrsb-upgrade="cd $HOME; .engrsb/setup.sh --upgrade"
+
 # Deno aliases for frequently used commands
 export DENO_INSTALL=$SANDBOX_CONF_HOME
 export DENO_CACHES_HOME=$HOME/.cache/deno
