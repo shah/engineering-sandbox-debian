@@ -35,19 +35,26 @@ mv $SANDBOX_CONF_HOME/bin/hugo $SANDBOX_CONF_HOME/bin/hugox
 curl -L https://github.com/${HUGO_REPO}/releases/download/${HUGO_VERSION}/hugo_${HUGO_VERSION:1}_Linux-64bit.tar.gz \
      | tar -xz -C $SANDBOX_CONF_HOME/bin hugo
 
+title "Setup .zshrc and .z (for more convenience 'cd' directory changes)"
 [[ -f $HOME/.zshrc ]] || ln -s $SANDBOX_CONF_HOME/zshrc $HOME/.zshrc
 [[ -f $HOME/.z ]] || cp $SANDBOX_CONF_HOME/zrc .z
 
+title "Switch $USER default shell to ZSH"
 [[ $SHELL == '/bin/zsh' ]] || sudo usermod --shell /bin/zsh $USER
 
+title "Set global git configs for $SANDBOX_GIT_USER_NAME ($SANDBOX_GIT_USER_EMAIL)"
 git config --global user.email "$SANDBOX_GIT_USER_EMAIL"
 git config --global user.name "$SANDBOX_GIT_USER_NAME"
 git config --global push.default simple
 git config --global pull.rebase false 
 git config --global push.followTags true
 
-# Add a 30-day timeout for credentials caching
+title "Set 30 day timeout for Git credentials cache"
 git config --global credential.helper 'cache --timeout=2592000'
+
+title "Get latest version of Semantic Version tagging script"
+curl -L "https://raw.githubusercontent.com/pnikosis/semtag/master/semtag" > $SANDBOX_CONF_HOME/bin/git-semtag
+chmod +x $SANDBOX_CONF_HOME/bin/git-semtag
 
 title "Install SDKMAN! Java SDK Version Manager"
 # we use rcupdate=false because SDKMAN! reference is already in zshrc
