@@ -23,9 +23,14 @@ alias engrsb-upgrade="cd $HOME; .engrsb/setup.sh --upgrade"
 # Deno aliases for frequently used commands
 export DENO_INSTALL=$SANDBOX_CONF_HOME
 export DENO_CACHES_HOME=$HOME/.cache/deno
+path+=($DENO_INSTALL/bin)
+alias deno-install="deno install --root $DENO_INSTALL"
 alias deno-run="deno run -A --unstable"
 alias deno-test="deno fmt ; deno test -A --unstable"
 alias deno-clear-caches="rm -rf $DENO_CACHES_HOME/deps; rm -rf $DENO_CACHES_HOME/gen"
+alias deno-deps-check="udd *.ts --dry-run"
+alias deno-udd-all="udd *.ts"
+alias deno-udd="udd deps.ts"
 
 # Use SDKMAN! for Java SDK version managment
 export SDKMAN_DIR="$HOME/.sdkman"

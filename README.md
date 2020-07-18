@@ -1,6 +1,6 @@
 # WSL2 Debian Engineering Sandbox Setup
 
-Create a Debian WSL2 instance using Windows Store.
+Create a "disposable" Debian WSL2 instance using Windows Store. This project treats the WSL2 instance as "disposable" meaning it's for development only and can easily be destroyed and recreated whenever necessary. The cost for creation and destruction for a Engineering Sandbox should be so low that it should be treated almost as a container rather than a VM. 
 
 Then:
 
