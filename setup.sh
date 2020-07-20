@@ -25,8 +25,10 @@ sudo apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev l
 
 title "Install the latest version of Deno into $SANDBOX_CONF_HOME/bin"
 curl -fsSL https://deno.land/x/install/install.sh | DENO_INSTALL=$SANDBOX_CONF_HOME sh
-title "Install Update Deno Dependencies (UDD) utility"
-deno install --root $SANDBOX_CONF_HOME -A -f -n udd https://deno.land/x/udd/main.ts
+title "Install 'Update Deno Dependencies' (UDD) utility"
+deno install -A -f -n udd https://deno.land/x/udd/main.ts
+title "Install Deno-based 'Keep a Changelog' (changelog) utility"
+deno install --allow-read --allow-write --unstable --name changelog -f https://raw.githubusercontent.com/oscarotero/keep-a-changelog/deno/bin.js
 
 export HUGO_REPO="gohugoio/hugo"
 export HUGO_VERSION=`curl -s https://api.github.com/repos/${HUGO_REPO}/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")'`
