@@ -17,6 +17,10 @@ path+=($SANDBOX_CONF_HOME/bin)
 path+=($HOME/.cargo/bin)
 source $HOME/.cargo/env
 
+# Julia toolchain
+export JULIA_HOME=${JULIA_HOME:-$HOME/.julia}
+path+=($JULIA_HOME/latest/bin)
+
 # Engineering Sandbox frequently used commands
 alias engrsb-upgrade="cd $HOME; .engrsb/setup.sh --upgrade"
 

@@ -70,4 +70,6 @@ curl -s "https://get.sdkman.io?rcupdate=false" | bash > $SANDBOX_CONF_HOME/sdkma
 title "Install Rust toolchain"
 curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
 
+source ${SANDBOX_CONF_HOME}/install-julia.sh
+
 echo "Setup complete, logout and back in."
