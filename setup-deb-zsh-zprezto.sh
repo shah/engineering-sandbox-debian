@@ -16,4 +16,4 @@ log "Switch $USER default shell to ZSH"
 
 # After using this script, get the standard associated ZSH rcfiles
 # curl https://raw.githubusercontent.com/shah/engineering-sandbox-debian/master/p10k.zsh > $HOME/.p10k.zsh
-# curl https://raw.githubusercontent.com/shah/engineering-sandbox-debian/master/zpreztorc > $HOME/.zpreztorc
+# curl https://raw.githubusercontent.com/shah/engineering-sandbox-debian/master/zpreztorc > $HOME/.zprezto/runcoms/zpreztorc
