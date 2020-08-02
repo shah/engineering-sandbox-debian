@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-log() { printf "\n\033[1;37m$1\033[0m\n" }
+log() { 
+    printf "\n\033[1;37m$1\033[0m\n" 
+}
 
 log "Install ZSH and related shell/CLI developer requirements"
-sudo apt-get -qq update && apt-get -y -qq install --no-install-recommends zsh git curl wget
+sudo apt-get -qq update && sudo apt-get -y -qq install --no-install-recommends zsh git curl wget
 
 log "Install prezto ZSH module framework and symlink prezto-suggested ZSH rcfiles"
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
