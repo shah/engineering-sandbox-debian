@@ -27,10 +27,14 @@ Now the following will be setup:
 * `git-semver` script courtesy of [semtag](https://github.com/pnikosis/semtag)
 * Powerline 10k Theme with nice defaults
 * Hugo, Deno in .engrsb/bin (and in $PATH)
+* Update Deno Dependencies (UDD) utility for `deps.ts` and module versions management
 * nvm (run `nvm install node` once)
 * SDKMAN! (run `sdk install java` once and then, e.g., `sdk use java 11.0.7.hs-adpt`)
 * Rust toolchain
 * Python with pyenv (run `pyenv install 3.8.3` once and then, e.g. `pyenv global 3.8.3`)
+* Lazy Docker in /usr/local/bin
+* rupa/z directory navigation utility
+* zPrezto plugin manager rcfile (for VS Code devcontainers, in case Antigen doesn't work)
 
 # Project Directories
 

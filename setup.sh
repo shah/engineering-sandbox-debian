@@ -39,6 +39,9 @@ mv $SANDBOX_CONF_HOME/bin/hugo $SANDBOX_CONF_HOME/bin/hugox
 curl -L https://github.com/${HUGO_REPO}/releases/download/${HUGO_VERSION}/hugo_${HUGO_VERSION:1}_Linux-64bit.tar.gz \
      | tar -xz -C $SANDBOX_CONF_HOME/bin hugo
 
+title "Setup Lazy Docker utility for local container observability"
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | sudo bash
+
 title "Setup .zshrc and .z (for more convenience 'cd' directory changes)"
 [[ -f $HOME/.zshrc ]] || ln -s $SANDBOX_CONF_HOME/zshrc $HOME/.zshrc
 [[ -f $HOME/.z ]] || cp $SANDBOX_CONF_HOME/zrc .z
