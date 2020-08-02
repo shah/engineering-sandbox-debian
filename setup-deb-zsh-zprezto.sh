@@ -9,6 +9,7 @@ sudo apt-get -qq update && sudo apt-get -y -qq install --no-install-recommends z
 
 log "Install prezto ZSH module framework and symlink prezto-suggested ZSH rcfiles"
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+rm -f $HOME/.zshrc
 /bin/zsh -c 'setopt EXTENDED_GLOB; for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"; done'
 
 log "Switch $USER default shell to ZSH"
