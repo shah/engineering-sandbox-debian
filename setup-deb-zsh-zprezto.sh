@@ -1,20 +1,23 @@
 #!/usr/bin/env bash
-
-log() { 
-    printf "\n\033[1;37m$1\033[0m\n" 
-}
-
-log "Install ZSH and related shell/CLI developer requirements"
+#
+# Engineering sandbox CLI shell setup script.
+# Can be run using `curl ... | bash` or `source setup-deb-zsh-zprezto.sh` as part of
+# `setup.sh` in this repo.
+#
+echo "Install ZSH and related shell/CLI developer requirements"
 sudo apt-get -qq update && sudo apt-get -y -qq install --no-install-recommends zsh git curl wget
 
-log "Install prezto ZSH module framework and symlink prezto-suggested ZSH rcfiles"
+echo "Install prezto ZSH module framework and symlink prezto-suggested ZSH rcfiles"
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 rm -f $HOME/.zshrc
 /bin/zsh -c 'setopt EXTENDED_GLOB; for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"; done'
 
-log "Switch $USER default shell to ZSH"
+echo "Switch $USER default shell to ZSH"
 [[ $SHELL == '/bin/zsh' ]] || sudo usermod --shell /bin/zsh $USER
 
-# After using this script, get the standard associated ZSH rcfiles
+# If running using `curl ... | bash`, after execution of this script, get the standard associated ZSH
+# rcfiles (for Powerline10k theme and related defaults) using the following commands. If running as part
+# of `setup.sh` the files will already be installed properly.
+#
 # curl https://raw.githubusercontent.com/shah/engineering-sandbox-debian/master/p10k.zsh > $HOME/.p10k.zsh
 # curl https://raw.githubusercontent.com/shah/engineering-sandbox-debian/master/zpreztorc > $HOME/.zprezto/runcoms/zpreztorc
