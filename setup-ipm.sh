@@ -8,10 +8,10 @@
 # * `github.com/profclems/glab` GitLab CLI utility
 #
 export SANDBOX_CONF_HOME=${SANDBOX_CONF_HOME:-$HOME/.engrsb}
-export SANDBOX_GIT_PARAMS_FILE=${SANDBOX_GIT_PARAMS_FILE:-$SANDBOX_CONF_HOME/secrets.env}
+export SANDBOX_GIT_PARAMS_ENVFILE=${SANDBOX_GIT_PARAMS_ENVFILE:-$SANDBOX_CONF_HOME/secrets.env}
 
-[[ -f $SANDBOX_GIT_PARAMS_FILE ]] || { echo >&2 "$SANDBOX_GIT_PARAMS_FILE not found, need SANDBOX_GIT_* variables."; exit 1; }
-source $SANDBOX_GIT_PARAMS_FILE
+[[ -f $SANDBOX_GIT_PARAMS_ENVFILE ]] || { echo >&2 "$SANDBOX_GIT_PARAMS_ENVFILE not found, need SANDBOX_GIT_* variables."; exit 1; }
+source $SANDBOX_GIT_PARAMS_ENVFILE
 
 [[ $SANDBOX_GIT_USER_EMAIL ]] || { echo >&2 "SANDBOX_GIT_USER_EMAIL variable not set"; exit 1; }
 [[ $SANDBOX_GIT_USER_NAME ]] || { echo >&2 "SANDBOX_GIT_USER_NAME variable not set"; exit 1; }
