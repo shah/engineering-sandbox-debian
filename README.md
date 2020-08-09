@@ -52,3 +52,14 @@ While this repo is mainly designed for Debian, if you're using Ubuntu you might 
 
     sudo curl -o /usr/share/zsh-antigen/antigen.zsh -sL git.io/antigen
 
+# NPM Packaging
+
+We use GitHub NPM Package Registry. Use [these instructions](https://docs.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages).
+
+Create `$HOME/.npmrc` with the following contents:
+
+    //npm.pkg.github.com/:_authToken=<Personal Access Token>
+
+Then:
+
+    npm login --registry=https://npm.pkg.github.com
