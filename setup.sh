@@ -14,7 +14,7 @@ sudo apt-get update
 
 title "Install common development utilities"
 sudo apt-get install -y wget curl git make jq bzip2 graphviz xmlstarlet zip unzip zsh zsh-antigen tree gawk iproute2
-sudo apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libxml2-dev xz-utils tk-dev libxmlsec1-dev libreadline-dev libffi-dev curl libbz2-dev liblzma-dev libbz2-dev llvm
+sudo apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libxml2-dev xz-utils tk-dev libxmlsec1-dev libreadline-dev libffi-dev libbz2-dev liblzma-dev llvm
 source ${SANDBOX_CONF_HOME}/install-deno.sh
 source ${SANDBOX_CONF_HOME}/install-hugo.sh
 
