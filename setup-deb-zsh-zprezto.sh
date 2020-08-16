@@ -4,6 +4,9 @@
 # Can be run using `curl ... | bash` or `source setup-deb-zsh-zprezto.sh` as part of
 # `setup.sh` in this repo.
 #
+# NOTE: As of Aug 16 2020, the default ZSH framework in `setup.sh` is Antigen, not prezto.
+#       This prezto script is for `.devcontainer` use cases where Antigen is less stable.
+#
 echo "Install ZSH and related shell/CLI developer requirements"
 sudo apt-get -qq update && sudo apt-get -y -qq install --no-install-recommends zsh git curl wget
 
@@ -15,9 +18,9 @@ rm -f $HOME/.zshrc
 echo "Switch $USER default shell to ZSH"
 [[ $SHELL == '/bin/zsh' ]] || sudo usermod --shell /bin/zsh $USER
 
-# If running using `curl ... | bash`, after execution of this script, get the standard associated ZSH
-# rcfiles (for Powerline10k theme and related defaults) using the following commands. If running as part
-# of `setup.sh` the files will already be installed properly.
+# If running using `curl ... | bash`, after execution of this script (e.g. in a container), get the
+# standard associated ZSH rcfiles (for Powerline10k theme and related defaults) using the following 
+# commands. If running as part of `setup.sh` the files will already be installed properly.
 #
 # curl https://raw.githubusercontent.com/shah/engineering-sandbox-debian/master/p10k.zsh > $HOME/.p10k.zsh
 # curl https://raw.githubusercontent.com/shah/engineering-sandbox-debian/master/zpreztorc > $HOME/.zprezto/runcoms/zpreztorc
