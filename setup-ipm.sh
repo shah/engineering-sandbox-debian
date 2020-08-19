@@ -30,7 +30,6 @@ echo "Get latest version of Semantic Version tagging script"
 curl -L "https://raw.githubusercontent.com/pnikosis/semtag/master/semtag" > $SANDBOX_CONF_HOME/bin/git-semtag
 chmod +x $SANDBOX_CONF_HOME/bin/git-semtag
 
-https://github.com/profclems/glab/releases/download/v1.7.0/glab_1.7.0_Linux_x86_64.tar.gz
 
 export GLAB_REPO="profclems/glab"
 export GLAB_VERSION=`curl -s https://api.github.com/repos/${GLAB_REPO}/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")'`
