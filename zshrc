@@ -37,6 +37,13 @@ alias deno-deps-check="udd *.ts --dry-run"
 alias deno-udd-all="udd *.ts"
 alias deno-udd="udd deps.ts"
 
+# Haxe and Neko setup
+export HAXE_HOME=$HOME/.engrsb/haxe
+export HAXELIB_HOME=$HOME/.engrsb/.haxelib
+export NEKO_HOME=$HOME/.engrsb/neko
+alias haxe="$HAXE_HOME/haxe"
+alias haxelib="LD_LIBRARY_PATH=$NEKO_HOME $HAXE_HOME/haxelib"
+
 # Use SDKMAN! for Java SDK version managment
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"

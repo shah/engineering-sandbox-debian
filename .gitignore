@@ -1,4 +1,6 @@
-bin
+bin/
+haxe/
+neko/
 antigenrc.zwc
 secrets.env
 sdkman.log
