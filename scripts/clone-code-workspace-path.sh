@@ -8,6 +8,9 @@ jq -r '.folders[] | "test ! -d \(.path) && mkdir -p \(.path) && git clone https:
 #   curl -L -o sample.code-workspace https://shah/vscode-workspaces/sample.code-workspace
 #   cat sample.code-workspace | $HOME/.engrsb/scripts/clone-code-workspace-path.sh | sh
 #
+# For a dry-run, don't include `| sh` in the pipe:
+#   cat sample.code-workspace | $HOME/.engrsb/scripts/clone-code-workspace-path.sh
+#
 # The convention is that the .folder[].path values are both the name of the cloned directories as well
 # as the source repo's domain so that https://${.folder.path} will be the source repo.
 #
