@@ -1,5 +1,6 @@
 # SANDBOX_CONF_HOME is the where we keep the common engineering configs
 export SANDBOX_CONF_HOME=${SANDBOX_CONF_HOME:-$HOME/.engrsb}
+export SANDBOX_WORKSP_HOME=${SANDBOX_WORKSP_HOME:-$HOME/workspaces}
 
 # Load Antigen
 source /usr/share/zsh-antigen/antigen.zsh
@@ -22,7 +23,7 @@ export JULIA_HOME=${JULIA_HOME:-$HOME/.julia}
 path+=($JULIA_HOME/latest/bin)
 
 # Engineering Sandbox frequently used commands
-alias engrsb-upgrade="cd $HOME; .engrsb/setup.sh --upgrade"
+alias engrsb-upgrade="cd $SANDBOX_CONF_HOME; git pull && cd $HOME; .engrsb/setup.sh --upgrade"
 
 # Deno aliases for frequently used commands
 export DENO_INSTALL=$SANDBOX_CONF_HOME
