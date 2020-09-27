@@ -6,7 +6,7 @@ Then:
 
     cd $HOME
     sudo apt-get update
-    sudo apt-get install -y git
+    sudo apt-get install -y git vim
     git clone https://github.com/shah/engineering-sandbox-debian.git .engrsb
     cd .engrsb
     cp secrets.env.sample secrets.env
