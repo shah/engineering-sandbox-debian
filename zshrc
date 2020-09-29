@@ -5,10 +5,12 @@ export SANDBOX_WORKSP_HOME=${SANDBOX_WORKSP_HOME:-$HOME/workspaces}
 # Visual Studio Code Team utilities for managing code repos
 export VSCODE_TEAM_VERSION=`curl -s https://api.github.com/repos/shah/vscode-team/tags  | jq '.[0].name' -r`
 alias projectctl="deno run -A --unstable 'https://denopkg.com/shah/vscode-team@${VSCODE_TEAM_VERSION}/projectctl.ts'"
+alias configctl="deno run -A --unstable 'https://denopkg.com/shah/vscode-team@${VSCODE_TEAM_VERSION}/configctl.ts'"
 alias wsctl="deno run -A --unstable 'https://denopkg.com/shah/vscode-team@${VSCODE_TEAM_VERSION}/wsctl.ts'"
 
 # Same as above except reloads from source location
 alias projectctlr="deno run -A --unstable --reload 'https://denopkg.com/shah/vscode-team@${VSCODE_TEAM_VERSION}/projectctl.ts'"
+alias configctlr="deno run -A --unstable --reload 'https://denopkg.com/shah/vscode-team@${VSCODE_TEAM_VERSION}/configctl.ts'"
 alias wsctlr="deno run -A --unstable --reload 'https://denopkg.com/shah/vscode-team@${VSCODE_TEAM_VERSION}/wsctl.ts'"
 
 # Load Antigen
