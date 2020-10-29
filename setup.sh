@@ -15,6 +15,7 @@ sudo apt-get update
 title "Install common development utilities"
 sudo apt-get install -y wget curl git make jq bzip2 graphviz xmlstarlet zip unzip zsh zsh-antigen tree gawk iproute2
 sudo apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libxml2-dev xz-utils tk-dev libxmlsec1-dev libreadline-dev libffi-dev libbz2-dev liblzma-dev llvm
+sudo apt-get install -y pylint
 
 source ${SANDBOX_CONF_HOME}/install-github-cli.sh
 source ${SANDBOX_CONF_HOME}/install-deno.sh
@@ -35,6 +36,20 @@ source ${SANDBOX_CONF_HOME}/setup-ipm.sh
 title "Install SDKMAN! Java SDK Version Manager"
 # we use rcupdate=false because SDKMAN! reference is already in zshrc
 curl -s "https://get.sdkman.io?rcupdate=false" | bash > $SANDBOX_CONF_HOME/sdkman.log
+
+title "Check Node Version Manager install"
+[[ -f $HOME/.nvm/nvm.sh ]] && source ~/.nvm/nvm.sh
+nvm --version
+
+title "Install NodeJS LTS version for ESLint"
+nvm install --lts
+nvm use --lts
+node -v
+npm -v
+
+title "Install ESlint, Typescript as peer dependency for ESLint"
+npm install -g typescript
+npm install -g eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 
 title "Install Rust toolchain"
 curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
