@@ -10,8 +10,8 @@ alias configctl="deno run -A --unstable 'https://denopkg.com/shah/vscode-team@${
 export VSCODE_TEAM_WSCTL="https://denopkg.com/shah/vscode-team@${VSCODE_TEAM_VERSION}/wsctl.ts"
 alias wsctl="deno run -A --unstable '${VSCODE_TEAM_WSCTL}'"
 
-# In $SANDBOX_WORKSP_HOME cleanup orphan *.code-workspace files and pull the latest workspaces
-alias wsctl-pull="cd $SANDBOX_WORKSP_HOME; find -L -name '*.code-workspace' -type l -exec rm -f {} \; && deno run -A --unstable '${VSCODE_TEAM_WSCTL}' setup git.netspective.io/netspective-studios/netspective-workspaces . --verbose"
+# In $SANDBOX_WORKSP_HOME cleanup orphan *.code-workspace files and pull the latest netspective-workspaces
+alias netws-pull="cd $SANDBOX_WORKSP_HOME/git.netspective.io/netspective-studios/netspective-workspaces; git pull ; cd $SANDBOX_WORKSP_HOME ; find -L -name '*.code-workspace' -type l -exec rm -f {} \; && deno run -A --unstable '${VSCODE_TEAM_WSCTL}' setup git.netspective.io/netspective-studios/netspective-workspaces . --verbose"
 
 # Same as above except reloads from source location
 alias projectctlr="deno run -A --unstable --reload 'https://denopkg.com/shah/vscode-team@${VSCODE_TEAM_VERSION}/projectctl.ts'"
