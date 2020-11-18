@@ -64,8 +64,8 @@ alias haxe="$HAXE_HOME/haxe"
 alias haxelib="LD_LIBRARY_PATH=$NEKO_HOME $HAXE_HOME/haxelib"
 
 # Google Go setup
-export SANDBOX_GOLANG_HOME=${SANDBOX_GOLANG_HOME:-/usr/local/go}
-path+=($SANDBOX_GOLANG_HOME/bin)
+export GOLANG_HOME=${GOLANG_HOME:-/usr/local/go}
+path+=($GOLANG_HOME/bin)
 
 # Use SDKMAN! for Java SDK version managment
 export SDKMAN_DIR="$HOME/.sdkman"
