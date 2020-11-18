@@ -19,6 +19,7 @@ sudo apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev l
 source ${SANDBOX_CONF_HOME}/install-github-cli.sh
 source ${SANDBOX_CONF_HOME}/install-deno.sh
 source ${SANDBOX_CONF_HOME}/install-hugo.sh
+source ${SANDBOX_CONF_HOME}/install-golang.sh
 
 title "Setup Lazy Docker utility for local container observability"
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | sudo bash
