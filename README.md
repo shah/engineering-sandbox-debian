@@ -48,6 +48,7 @@ Once you've cloned the repo and setup your secrets, run the setup from your `$HO
 * Update Deno Dependencies (UDD) utility for `deps.ts` and module versions management
 * nvm (run `nvm install node` once)
 * SDKMAN! (run `sdk install java` once and then, e.g., `sdk use java 11.0.7.hs-adpt`)
+* NodeJS LTS release, ESlint and Typescript as peer dependency for ESlint.
 * Rust toolchain
 * Julia toolchain (multiple versions supported in `$HOME/.julia/julia-X.Y.Z` with `$HOME/.julia/latest` symlink and `$HOME/.julia/latest/bin` in path)
 * Python with pyenv (run `pyenv install 3.8.3` once and then, e.g. `pyenv global 3.8.3`)

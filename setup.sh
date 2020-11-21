@@ -17,6 +17,7 @@ sudo apt-get install -y wget curl git make jq bzip2 graphviz xmlstarlet zip unzi
 sudo apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libxml2-dev xz-utils tk-dev libxmlsec1-dev libreadline-dev libffi-dev libbz2-dev liblzma-dev llvm
 
 source ${SANDBOX_CONF_HOME}/install-secrets.sh
+source ${SANDBOX_CONF_HOME}/install-python.sh
 source ${SANDBOX_CONF_HOME}/install-github-cli.sh
 source ${SANDBOX_CONF_HOME}/install-deno.sh
 source ${SANDBOX_CONF_HOME}/install-hugo.sh
@@ -37,6 +38,8 @@ source ${SANDBOX_CONF_HOME}/setup-ipm.sh
 title "Install SDKMAN! Java SDK Version Manager"
 # we use rcupdate=false because SDKMAN! reference is already in zshrc
 curl -s "https://get.sdkman.io?rcupdate=false" | bash > $SANDBOX_CONF_HOME/sdkman.log
+
+source ${SANDBOX_CONF_HOME}/install-nodejs.sh
 
 title "Install Rust toolchain"
 curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
