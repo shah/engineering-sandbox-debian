@@ -2,24 +2,41 @@
 
 Create a "disposable" Debian WSL2 instance using Windows Store. This project treats the WSL2 instance as "disposable" meaning it's for development only and can easily be destroyed and recreated whenever necessary. The cost for creation and destruction for a Engineering Sandbox should be so low that it should be treated almost as a container rather than a VM. 
 
-Then:
+## 1. Clone the Engineering Sandbox Git repo
 
     cd $HOME
     sudo apt-get update
     sudo apt-get install -y git vim
     git clone https://github.com/shah/engineering-sandbox-debian.git .engrsb
-    cd .engrsb
-    cp secrets.env.sample secrets.env
-    vi secrets.env
 
-Edit `.engrsb/secrets.env` with your secret information.
+## 2. Understand how to manage your secrets and other confidential configurations
 
-Then:
+It's crucial that confidential config settings and secrets are never acccidentallyed stored in project Git repositories so it's important to manage secrets in your $HOME directory. You can then source them into projects as you need them explicitly. 
+
+By explicitly managing secrets you will be sure that passwords and other secrets never get put into scripts and are always sourced from the environment or external "vaults".
+
+By convention, all secrets are stored in `$HOME/.engrsb/secrets.d` as separate secrets "groups" so let's prepare the directory:
+
+    cd $HOME/.engrsb
+    ./install-secrets.sh
+
+Edit `secrets.d/git.env` and `secrets.d/github.com.env` and add your credentials. You should segment your secrets into separate files so that they're easy to find and edit. Then, when you need them you can use this in your terminal/shell:
+
+    source $SANDBOX_CONF_HOME/secrets.env
+
+The default `$SANDBOX_CONF_HOME/secrets.env` just loops through each file in `$HOME/.engrsb/secrets.d` and `source`s them into the active shell. If you only need to pull in a particular secrets group you can run something like this:
+
+    source $SANDBOX_CONF_SECRETS_HOME/git.env
+    source $SANDBOX_CONF_SECRETS_HOME/github.com.env
+
+## 3. Run the common setup
+
+Once you've cloned the repo and setup your secrets, run the setup from your `$HOME` directory. 
 
     cd $HOME
     .engrsb/setup.sh
 
-Now the following will be setup:
+## 4. Examine what was setup:
 
 * zsh as the default shell
 * Antigen and oh-my-zsh script framework
@@ -27,6 +44,7 @@ Now the following will be setup:
 * `git-semver` script courtesy of [semtag](https://github.com/pnikosis/semtag)
 * Powerline 10k Theme with nice defaults
 * Hugo, Deno in .engrsb/bin (and in $PATH)
+* Google Go in /usr/local/go
 * Update Deno Dependencies (UDD) utility for `deps.ts` and module versions management
 * nvm (run `nvm install node` once)
 * SDKMAN! (run `sdk install java` once and then, e.g., `sdk use java 11.0.7.hs-adpt`)
@@ -36,15 +54,6 @@ Now the following will be setup:
 * Lazy Docker in /usr/local/bin
 * rupa/z directory navigation utility
 * zPrezto plugin manager rcfile (for VS Code devcontainers, in case Antigen doesn't work)
-
-# Project Directories
-
-Setup projects folder structure:
-
-    mkdir -p $HOME/workspaces/git.netspective.io
-    mkdir -p $HOME/workspaces/github.com
-
-If you use any other repos, create appropriate subdirectories above.
 
 # Ubuntu Notes
 

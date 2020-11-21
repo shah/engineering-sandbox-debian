@@ -1,5 +1,6 @@
 # SANDBOX_CONF_HOME is the where we keep the common engineering configs
 export SANDBOX_CONF_HOME=${SANDBOX_CONF_HOME:-$HOME/.engrsb}
+export SANDBOX_CONF_SECRETS_HOME=${SANDBOX_CONF_SECRETS_HOME:-$SANDBOX_CONF_HOME/secrets.d}
 export SANDBOX_WORKSP_HOME=${SANDBOX_WORKSP_HOME:-$HOME/workspaces}
 
 # Visual Studio Code Team utilities for managing code repos
