@@ -37,6 +37,10 @@ chmod +x ${SANDBOX_ENGR_BIN}/octosql
 export Q_TEXT_AS_DATA_DEB_SRC=https://github.com/harelba/packages-for-q/raw/master/deb/q-text-as-data_2.0.9-2_amd64.deb
 TEMP_DEB="$(mktemp)" && curl -L $Q_TEXT_AS_DATA_DEB_SRC -o "$TEMP_DEB" && sudo dpkg -i "$TEMP_DEB" && rm -f "$TEMP_DEB"
 
+# [Dasel](https://github.com/TomWright/dasel) jq/yq for JSON, YAML, TOML, XML and CSV with zero runtime dependencies
+curl -s https://api.github.com/repos/tomwright/dasel/releases/latest | grep browser_download_url | grep linux_amd64 | cut -d '"' -f 4 | wget -qi - && mv dasel_linux_amd64 dasel && chmod +x dasel
+mv ./dasel $SANDBOX_ENGR_BIN/dasel
+
 # TODO others to consider:
 #
 # * A list of command line tools for manipulating structured text data
