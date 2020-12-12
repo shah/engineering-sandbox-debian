@@ -2,6 +2,20 @@
 export SANDBOX_CONF_HOME=${SANDBOX_CONF_HOME:-$HOME/.engrsb}
 export SANDBOX_CONF_SECRETS_HOME=${SANDBOX_CONF_SECRETS_HOME:-$SANDBOX_CONF_HOME/secrets.d}
 export SANDBOX_WORKSP_HOME=${SANDBOX_WORKSP_HOME:-$HOME/workspaces}
+export SANDBOX_POLYLANG_HOME=${SANDBOX_POLYLANG_HOME:-$SANDBOX_CONF_HOME/lang}
+
+# Python setup with pyenv (TODO: make sure Antigen is using this)
+export PYENV_ROOT="$SANDBOX_POLYLANG_HOME/pyenv"
+path+=($PYENV_ROOT/bin)
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+fi
+# First time use, remember to use:
+#   pyenv install-latest
+
+# NodeJS setup with NVM (TODO: make sure Antigen is using this)
+export NVM_DIR="$SANDBOX_POLYLANG_HOME/nvm"
+path+=($NVM_DIR/bin)
 
 # Visual Studio Code Team utilities for managing code repos
 export VSCODE_TEAM_VERSION=`curl -s https://api.github.com/repos/shah/vscode-team/tags  | jq '.[0].name' -r`
@@ -20,7 +34,7 @@ alias projectctlr="deno run -A --unstable --reload 'https://denopkg.com/shah/vsc
 alias configctlr="deno run -A --unstable --reload 'https://denopkg.com/shah/vscode-team@${VSCODE_TEAM_VERSION}/configctl.ts'"
 alias wsctlr="deno run -A --unstable --reload '${VSCODE_TEAM_WSCTL}'"
 
-# Load Antigen
+# Load Antigen (be sure to setup NVM, pyenv, and others that Antigen knows about before `source`)
 source /usr/share/zsh-antigen/antigen.zsh
 
 # Load Antigen configurations
@@ -37,7 +51,7 @@ path+=($HOME/.cargo/bin)
 source $HOME/.cargo/env
 
 # Julia toolchain
-export JULIA_HOME=${JULIA_HOME:-$HOME/.julia}
+export JULIA_HOME=${JULIA_HOME:-$SANDBOX_POLYLANG_HOME/julia}
 path+=($JULIA_HOME/latest/bin)
 
 # Engineering Sandbox frequently used commands
@@ -59,14 +73,14 @@ alias deno-udd-all="udd *.ts"
 alias deno-udd="udd deps.ts"
 
 # Haxe and Neko setup
-export HAXE_HOME=$HOME/.engrsb/haxe
-export HAXELIB_HOME=$HOME/.engrsb/.haxelib
-export NEKO_HOME=$HOME/.engrsb/neko
+export HAXE_HOME=$SANDBOX_POLYLANG_HOME/haxe
+export NEKO_HOME=$SANDBOX_POLYLANG_HOME/neko
 alias haxe="$HAXE_HOME/haxe"
 alias haxelib="LD_LIBRARY_PATH=$NEKO_HOME $HAXE_HOME/haxelib"
 
 # Google Go setup
-export GOLANG_HOME=${GOLANG_HOME:-/usr/local/go}
+export SANDBOX_GOLANG_HOME=${SANDBOX_GOLANG_HOME:-$SANDBOX_POLYLANG_HOME/go}
+export GOLANG_HOME=${GOLANG_HOME:-$SANDBOX_GOLANG_HOME}
 path+=($GOLANG_HOME/bin)
 
 # Use SDKMAN! for Java SDK version managment

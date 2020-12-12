@@ -27,11 +27,10 @@ git config --global push.followTags true
 git config --global credential.helper 'cache --timeout=2592000'
 
 echo "Get latest version of Semantic Version tagging script"
-curl -L "https://raw.githubusercontent.com/pnikosis/semtag/master/semtag" > $SANDBOX_CONF_HOME/bin/git-semtag
+curl -Ls "https://raw.githubusercontent.com/pnikosis/semtag/master/semtag" > $SANDBOX_CONF_HOME/bin/git-semtag
 chmod +x $SANDBOX_CONF_HOME/bin/git-semtag
-
 
 export GLAB_REPO="profclems/glab"
 export GLAB_VERSION=`curl -s https://api.github.com/repos/${GLAB_REPO}/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")'`
-curl -L https://github.com/${GLAB_REPO}/releases/download/${GLAB_VERSION}/glab_${GLAB_VERSION:1}_Linux_x86_64.tar.gz \
+curl -Ls https://github.com/${GLAB_REPO}/releases/download/${GLAB_VERSION}/glab_${GLAB_VERSION:1}_Linux_x86_64.tar.gz \
      | tar -xz -C $SANDBOX_CONF_HOME/bin glab

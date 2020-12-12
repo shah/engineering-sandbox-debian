@@ -13,7 +13,7 @@ export DOLT_BIN_HOME=${DOLT_BIN_HOME:-$SANDBOX_CONF_HOME/bin}
 export DOLT_REPO="liquidata-inc/dolt"
 export DOLT_VERSION=`curl -s https://api.github.com/repos/${DOLT_REPO}/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")'`
 echo "Install Dolt $DOLT_VERSION in $DOLT_BIN_HOME"
-curl -L https://github.com/${DOLT_REPO}/releases/download/${DOLT_VERSION}/dolt-linux-amd64.tar.gz \
+curl -Ls https://github.com/${DOLT_REPO}/releases/download/${DOLT_VERSION}/dolt-linux-amd64.tar.gz \
      | tar -xz -C $DOLT_BIN_HOME dolt-linux-amd64/bin/
 mv $DOLT_BIN_HOME/dolt-linux-amd64/bin/* $DOLT_BIN_HOME
 rm -rf $DOLT_BIN_HOME/dolt-linux-amd64/bin

@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 export SANDBOX_CONF_HOME=${SANDBOX_CONF_HOME:-$HOME/.engrsb}
-export SANDBOX_HAXE_HOME=${SANDBOX_HAXE_HOME:-$SANDBOX_CONF_HOME/haxe}
+export SANDBOX_POLYLANG_HOME=${SANDBOX_POLYLANG_HOME:-$SANDBOX_CONF_HOME/lang}
+export SANDBOX_HAXE_HOME=${SANDBOX_HAXE_HOME:-$SANDBOX_POLYLANG_HOME/haxe}
 export SANDBOX_HAXELIB_HOME=${SANDBOX_HAXELIB_HOME:-$SANDBOX_HAXE_HOME/lib}
-export SANDBOX_NEKO_HOME=${SANDBOX_NEKO_HOME:-$SANDBOX_CONF_HOME/neko}
+export SANDBOX_NEKO_HOME=${SANDBOX_NEKO_HOME:-$SANDBOX_POLYLANG_HOME/neko}
 
 export HAXE_REPO="HaxeFoundation/haxe"
 export HAXE_VERSION=`curl -s https://api.github.com/repos/${HAXE_REPO}/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")'`
@@ -14,12 +15,12 @@ export NEKO_VERSION_PERIOD=`echo $NEKO_VERSION_HYPHEN | tr - .`
 
 rm -rf $SANDBOX_HAXE_HOME
 mkdir -p $SANDBOX_HAXE_HOME
-curl -L https://github.com/${HAXE_REPO}/releases/download/${HAXE_VERSION}/haxe-${HAXE_VERSION}-linux64.tar.gz \
+curl -Ls https://github.com/${HAXE_REPO}/releases/download/${HAXE_VERSION}/haxe-${HAXE_VERSION}-linux64.tar.gz \
      | tar -xz --strip-components 1 -C $SANDBOX_HAXE_HOME
 
 rm -rf $SANDBOX_NEKO_HOME
 mkdir -p $SANDBOX_NEKO_HOME
-curl -L https://github.com/${NEKO_REPO}/releases/download/${NEKO_VERSION_HYPHEN}/neko-${NEKO_VERSION_PERIOD:1}-linux64.tar.gz \
+curl -Ls https://github.com/${NEKO_REPO}/releases/download/${NEKO_VERSION_HYPHEN}/neko-${NEKO_VERSION_PERIOD:1}-linux64.tar.gz \
      | tar -xz --strip-components 1 -C $SANDBOX_NEKO_HOME
 
 # tell haxelib where the libraries should be stored

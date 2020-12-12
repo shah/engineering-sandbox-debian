@@ -1,6 +1,5 @@
 bin/
-haxe/
-neko/
+lang/
 antigenrc.zwc
 secrets.d
 sdkman.log
