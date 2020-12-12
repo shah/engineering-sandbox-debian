@@ -11,7 +11,7 @@ Create a "disposable" Debian WSL2 instance using Windows Store. This project tre
 
 ## 2. Understand how to manage your secrets and other confidential configurations
 
-It's crucial that confidential config settings and secrets are never acccidentallyed stored in project Git repositories so it's important to manage secrets in your $HOME directory. You can then source them into projects as you need them explicitly. 
+It's crucial that confidential config settings and secrets are never acccidentally stored in project Git repositories so it's important to manage secrets in your $HOME directory. You can then source them into projects as you need them explicitly. 
 
 By explicitly managing secrets you will be sure that passwords and other secrets never get put into scripts and are always sourced from the environment or external "vaults".
 
