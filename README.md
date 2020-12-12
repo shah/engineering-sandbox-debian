@@ -5,8 +5,8 @@ Create a "disposable" Debian WSL2 instance using Windows Store. This project tre
 ## 1. Clone the Engineering Sandbox Git repo
 
     cd $HOME
-    sudo apt-get update              # if you do not `sudo` privileges, ask your admin
-    sudo apt-get install -y git vim  # if you do not `sudo` privileges, ask your admin
+    sudo apt-get update              # if you do not have `sudo` privileges, ask your admin
+    sudo apt-get install -y git vim  # if you do not have `sudo` privileges, ask your admin
     git clone https://github.com/shah/engineering-sandbox-debian.git .engrsb
 
 ## 2. Understand how to manage your secrets and other confidential configurations
