@@ -5,13 +5,12 @@ export SANDBOX_WORKSP_HOME=${SANDBOX_WORKSP_HOME:-$HOME/workspaces}
 export SANDBOX_POLYLANG_HOME=${SANDBOX_POLYLANG_HOME:-$SANDBOX_CONF_HOME/lang}
 
 # Python setup with pyenv (TODO: make sure Antigen is using this)
+export PYENV_HOME="$SANDBOX_POLYLANG_HOME/pyenv"
 export PYENV_ROOT="$SANDBOX_POLYLANG_HOME/pyenv"
 path+=($PYENV_ROOT/bin)
 if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
-# First time use, remember to use:
-#   pyenv install-latest
 
 # NodeJS setup with NVM (TODO: make sure Antigen is using this)
 export NVM_DIR="$SANDBOX_POLYLANG_HOME/nvm"
