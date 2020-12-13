@@ -56,8 +56,8 @@ The above setup steps are generally idempotent and can be run multiple times, wh
 * Google Go in .engrsb/lang/go
 * Update Deno Dependencies (UDD) utility for `deps.ts` and module versions management
 * nvm, NodeJS LTS release, ESlint and Typescript as peer dependency for ESlint.
-* SDKMAN! Java toolchain
-* Rust toolchain
+* SDKMAN! Java toolchain (TODO: move from `$HOME` to `.engrsb/lang/java`)
+* Rust toolchain (TODO: move from `$HOME/.rustup` to `.engrsb/lang/rustup`)
 * Julia toolchain
 * Lazy Docker in /usr/local/bin
 
