@@ -118,6 +118,7 @@ To upgrade from 1.0 to 1.1:
 ```bash
 cd $HOME/.engrsb
 git pull
+rm -rf neno haxe
 cd $HOME
 rm -rf .julia .npm .nvm .pyenv
 sudo rm -rf /usr/local/go
