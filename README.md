@@ -60,6 +60,7 @@ The above setup steps are generally idempotent and can be run multiple times, wh
 * Rust toolchain (TODO: move from `$HOME/.rustup` to `.engrsb/lang/rustup`)
 * Julia toolchain
 * Lazy Docker in /usr/local/bin
+* git-extras
 
 ## 5. Setup optional toolchains
 
@@ -113,7 +114,7 @@ While this repo is mainly designed for Debian, if you're using Ubuntu you might 
 
 The major change from 1.0 to 1.1 is that there is a cleaner separation of _privileged_ (`sudo` required) versus _unprivileged_ (no `sudo` required). The other change is that now all the languages are put into `.engrsb/lang` instead of the `$HOME` directory. This should help further isolate engineering sandbox related content from a normal `$HOME` directory.
 
-To upgrade from 1.0 to 1.1:
+To upgrade from 1.0 to 1.1.0:
 
 ```bash
 cd $HOME/.engrsb
@@ -123,6 +124,17 @@ cd $HOME
 rm -rf .julia .npm .nvm .pyenv
 sudo rm -rf /usr/local/go
 .engrsb/setup.sh
+```
+
+Exit your shell, and then start a new shell to see the latest updates.
+
+To upgrade from 1.1.0 to 1.1.1:
+
+```bash
+cd $HOME/.engrsb
+git pull
+cd $HOME
+sudo .engrsb/setup-privileged-common.sh   
 ```
 
 Exit your shell, and then start a new shell to see the latest updates.
