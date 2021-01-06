@@ -8,7 +8,7 @@
 # * `github.com/profclems/glab` GitLab CLI utility
 #
 export SANDBOX_CONF_HOME=${SANDBOX_CONF_HOME:-$HOME/.engrsb}
-export SANDBOX_GIT_PARAMS_ENVFILE=${SANDBOX_GIT_PARAMS_ENVFILE:-$SANDBOX_CONF_HOME/secrets.env}
+export SANDBOX_GIT_PARAMS_ENVFILE=${SANDBOX_GIT_PARAMS_ENVFILE:-$SANDBOX_CONF_HOME/secrets/git.env}
 
 [[ -f $SANDBOX_GIT_PARAMS_ENVFILE ]] || { echo >&2 "$SANDBOX_GIT_PARAMS_ENVFILE not found, need SANDBOX_GIT_* variables."; exit 1; }
 source $SANDBOX_GIT_PARAMS_ENVFILE
