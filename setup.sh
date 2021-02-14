@@ -16,6 +16,7 @@ title "Common development utilities should be installed using ./setup-privileged
 source ${SANDBOX_CONF_HOME}/install-secrets.sh
 source ${SANDBOX_CONF_HOME}/install-pyenv.sh
 source ${SANDBOX_CONF_HOME}/install-github-cli.sh
+source ${SANDBOX_CONF_HOME}/install-just.sh
 source ${SANDBOX_CONF_HOME}/install-deno.sh
 source ${SANDBOX_CONF_HOME}/install-hugo.sh
 source ${SANDBOX_CONF_HOME}/install-golang.sh

@@ -31,7 +31,7 @@ The default `$SANDBOX_CONF_HOME/secrets.env` just loops through each file in `$H
     source $SANDBOX_CONF_SECRETS_HOME/git.env
     source $SANDBOX_CONF_SECRETS_HOME/github.com.env
 
-## 3. Run setup
+## 3. Initial setup
 
 Once you've cloned the repo and setup your secrets, run the setup from your `$HOME` directory. 
 
@@ -41,6 +41,14 @@ Once you've cloned the repo and setup your secrets, run the setup from your `$HO
     sudo usermod --shell /bin/zsh $USER       # only required once (should be done by admin)
 
 The above setup steps are generally idempotent and can be run multiple times, whenever you need to update your sandbox.
+
+## 3.1 Upgrade setup
+
+The sandbox prep scripts are idempotent so you can run the same to do an upgrade:
+
+    cd $HOME
+    sudo .engrsb/setup-privileged-common.sh   # run only when necessary, system-wide (should be done by admin)
+    .engrsb/setup.sh                          # run regularly, in each home (safe, does not require `sudo`)
 
 ## 4. Examine what was setup automatically:
 
@@ -52,7 +60,7 @@ The above setup steps are generally idempotent and can be run multiple times, wh
 * `git-semver` script courtesy of [semtag](https://github.com/pnikosis/semtag)
 * Powerline 10k Theme with nice defaults
 * Python with pyenv
-* Hugo, Deno in .engrsb/bin (and in $PATH)
+* Hugo, Deno, [Just](https://github.com/casey/just) in .engrsb/bin (and in $PATH)
 * Google Go in .engrsb/lang/go
 * Update Deno Dependencies (UDD) utility for `deps.ts` and module versions management
 * nvm, NodeJS LTS release, ESlint and Typescript as peer dependency for ESlint.
