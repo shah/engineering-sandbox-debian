@@ -69,6 +69,7 @@ The sandbox prep scripts are idempotent so you can run the same to do an upgrade
 * Julia toolchain
 * Lazy Docker in /usr/local/bin
 * git-extras
+* pg_format
 
 ## 5. Setup optional toolchains
 
