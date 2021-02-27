@@ -26,6 +26,7 @@ title "Setup .zshrc and .z (for more convenience 'cd' directory changes)"
 [[ -f $HOME/.zshrc ]] || ln -s $SANDBOX_CONF_HOME/zshrc $HOME/.zshrc
 [[ -f $HOME/.z ]] || cp $SANDBOX_CONF_HOME/zrc .z
 
+
 source ${SANDBOX_CONF_HOME}/setup-ipm.sh
 
 title "Install SDKMAN! Java SDK Version Manager"
@@ -38,6 +39,9 @@ title "Install Rust toolchain"
 curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
 
 source ${SANDBOX_CONF_HOME}/install-julia.sh
+
+title "Setup PostgreSQL convenience scripts"
+[[ -f $HOME/.psqlrc ]] || ln -s $SANDBOX_CONF_HOME/psqlrc $HOME/.psqlrc
 
 echo "Setup complete, logout and back in."
 [[ $SHELL == '/bin/zsh' ]] || echo "IMPORTANT: A sudo user should run 'sudo usermod --shell /bin/zsh $USER' for you."

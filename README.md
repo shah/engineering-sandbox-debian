@@ -70,6 +70,7 @@ The sandbox prep scripts are idempotent so you can run the same to do an upgrade
 * Lazy Docker in /usr/local/bin
 * git-extras
 * pg_format
+* M4 text preprocessor (for code generator)
 
 ## 5. Setup optional toolchains
 
