@@ -11,9 +11,8 @@
 
 \set QUIET ON
 
-\set PROMPT1 '%[%033[33;1m%]%x%[%033[0m%]%[%033[1m%]%/%[%033[0m%]%R%# '
--- alternate:
--- \set PROMPT1 '(%n@%M:%>) [%/] > '
+-- Colored prompt that looks like `(user@host:port) database > `
+\set PROMPT1 '%[%033[2;5;27m%]%(%n@%M:%>)%[%033[0m%] %001%[%033[1;33;40m%]%002%/%001%[%033[0m%] > '
 
 -- PROMPT2 is printed when the prompt expects more input, like when you type
 -- SELECT * FROM<enter>. %R shows what type of input it expects.
@@ -41,7 +40,7 @@
 
 \set QUIET OFF
 
-\echo '\nCurrent Host Server Date Time : '`date` '\n'
+\echo '\nCurrent Host Server Date Time: '`date` '\n'
 
 \echo 'Administrative queries:\n'
 \echo '\t\t\t:settings\t-- Server Settings'
