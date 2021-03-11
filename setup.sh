@@ -40,7 +40,8 @@ curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
 
 source ${SANDBOX_CONF_HOME}/install-julia.sh
 
-title "Setup PostgreSQL convenience scripts"
+title "Setup SQL tools and PostgreSQL convenience scripts"
+source ${SANDBOX_CONF_HOME}/install-sql.sh
 [[ -f $HOME/.psqlrc ]] || ln -s $SANDBOX_CONF_HOME/psqlrc $HOME/.psqlrc
 
 echo "Setup complete, logout and back in."

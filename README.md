@@ -71,6 +71,7 @@ The sandbox prep scripts are idempotent so you can run the same to do an upgrade
 * git-extras
 * pg_format
 * M4 text preprocessor (for code generator)
+* `golang-migrate` and `Sqitch` DB migration utilities
 
 ## 5. Setup optional toolchains
 
