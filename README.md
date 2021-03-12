@@ -59,6 +59,7 @@ The sandbox prep scripts are idempotent so you can run the same to do an upgrade
 * GitHub CLI (official), `glab` GitLab CLI (unofficial)
 * `git-semver` script courtesy of [semtag](https://github.com/pnikosis/semtag)
 * Powerline 10k Theme with nice defaults
+* [fsql](https://github.com/kashav/fsql) for SQL-esque queries on the file system
 * Python with pyenv
 * Hugo, Deno, [Just](https://github.com/casey/just) in .engrsb/bin (and in $PATH)
 * Google Go in .engrsb/lang/go

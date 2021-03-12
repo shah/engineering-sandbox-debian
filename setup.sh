@@ -21,11 +21,11 @@ source ${SANDBOX_CONF_HOME}/install-deno.sh
 source ${SANDBOX_CONF_HOME}/install-hugo.sh
 source ${SANDBOX_CONF_HOME}/install-golang.sh
 source ${SANDBOX_CONF_HOME}/install-lazy-docker.sh
+source ${SANDBOX_CONF_HOME}/install-utils.sh
 
 title "Setup .zshrc and .z (for more convenience 'cd' directory changes)"
 [[ -f $HOME/.zshrc ]] || ln -s $SANDBOX_CONF_HOME/zshrc $HOME/.zshrc
 [[ -f $HOME/.z ]] || cp $SANDBOX_CONF_HOME/zrc .z
-
 
 source ${SANDBOX_CONF_HOME}/setup-ipm.sh
 
